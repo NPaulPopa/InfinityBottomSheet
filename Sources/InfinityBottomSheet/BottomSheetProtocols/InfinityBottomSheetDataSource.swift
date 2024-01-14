@@ -29,3 +29,19 @@ public protocol InfinityBottomSheetCoordinatorDataSource: AnyObject {
      */
     func rubberBandLogicBottom(_ total: CGFloat, _ limit: CGFloat) -> CGFloat
 }
+
+///Default data source implementation
+extension InfinityBottomSheetCoordinatorDataSource {
+    public func sheetPositions(_ availableHeight: CGFloat) -> [CGFloat] {
+        return [0.1,0.2,0.5, 0.7].map { $0 * availableHeight }
+    }
+    
+    public var animator: Animatable?{
+        return DefaultSheetAnimator()
+    }
+    
+    public func initialPosition(_ availableHeight: CGFloat) -> CGFloat {
+        return availableHeight * 0.5
+    }
+    
+}
