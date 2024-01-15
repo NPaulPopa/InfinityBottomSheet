@@ -18,3 +18,18 @@ public protocol InfinityBottomSheetCoordinatorDelegate: AnyObject {
     func bottomSheet(didChangePanWithVelocity velocity: CGPoint)
 
 }
+
+///Default empty implementations
+extension InfinityBottomSheetCoordinatorDelegate {
+    public func bottomSheet(_ container: UIView?, finishTranslationWith extraAnimation: @escaping ((_ percent: CGFloat) -> Void) -> Void) { }
+    public func bottomSheet(_ container: UIView?, didChange state: SheetTranslationState) { }
+    public func bottomSheet(_ container: UIView?, didPresent state: SheetTranslationState) { }
+    
+    public func bottomSheet(didChangePanWithVelocity velocity: CGPoint) {}
+    
+    public func bottomSheet(hasBeganWithVelocity velocity: CGPoint) {}
+}
+
+public protocol BottomSheetDelegate: InfinityBottomSheetCoordinatorDelegate {
+    
+}
