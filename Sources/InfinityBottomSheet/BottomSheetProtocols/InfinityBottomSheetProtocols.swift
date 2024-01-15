@@ -13,3 +13,13 @@ import UIKit
 public protocol Animatable {
     func animate(animations: @escaping () -> Void, completion: ((Bool) -> Void)?)
 }
+
+
+public typealias DraggableItem = Draggable & UIViewController
+
+///UIViewControllers must conform this to make use of InfinityBottomSheet gesture handling
+public protocol Draggable {
+    var bottomSheetController: BottomSheetProtocol? { get set }
+    var bottomSheetManager: BottomSheetManagerProtocol?  { get set }
+    func draggableView() -> UIScrollView?
+}
