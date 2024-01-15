@@ -44,4 +44,11 @@ extension InfinityBottomSheetCoordinatorDataSource {
         return availableHeight * 0.5
     }
     
+    public func rubberBandLogicTop(_ total: CGFloat, _ limit: CGFloat) -> CGFloat {
+        let value = limit * (1 - log10(total / limit))
+        guard !value.isNaN, value.isFinite else {
+            return total
+        }
+        return value
+    }
 }
