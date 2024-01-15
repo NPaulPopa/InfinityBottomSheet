@@ -61,3 +61,7 @@ extension InfinityBottomSheetCoordinatorDataSource {
     }
     
 }
+
+
+///By default make all the view controller conforms to the InfinityBottomSheetCoordinatorDataSource.
+extension UIViewController: InfinityBottomSheetCoordinatorDataSource {}
