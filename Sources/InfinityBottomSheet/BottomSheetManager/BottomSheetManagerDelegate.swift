@@ -14,3 +14,9 @@ protocol BottomSheetManagerDelegate: AnyObject {
     func bottomSheet(_ container: UIView?, didDismiss state: SheetTranslationState)
 }
 
+extension BottomSheetManagerDelegate {
+    
+    func bottomSheet(_ container: UIView?, didPresent state: SheetTranslationState) {}
+    func bottomSheet(_ container: UIView?, didChange state: SheetTranslationState) {}
+    func bottomSheet(_ container: UIView?, didDismiss state: SheetTranslationState) {}
+}
