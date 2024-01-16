@@ -91,3 +91,13 @@ extension UIViewController {
     }
 
 }
+
+extension UIView {
+    func pinToEdges(to view: UIView, insets: UIEdgeInsets = .zero) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: insets.bottom).isActive = true
+        self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: insets.right).isActive = true
+    }
+}
