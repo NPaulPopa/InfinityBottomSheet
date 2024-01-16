@@ -100,4 +100,16 @@ extension UIView {
         self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left).isActive = true
         self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: insets.right).isActive = true
     }
+    
+    func constraint(_ parent: UIViewController, for attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
+        return parent.view.constraints.first(where: { (constraint) -> Bool in
+            constraint.firstItem as? UIView == self && constraint.firstAttribute == attribute
+         })
+    }
+}
+
+extension Array where Element == CGFloat {
+    func nearest(to x: CGFloat) -> CGFloat {
+        return self.reduce(self.first!) { abs($1 - x) < abs($0 - x) ? $1 : $0 }
+    }
 }
