@@ -30,3 +30,25 @@ public extension Draggable {
         return nil
     }
 }
+
+
+public class DefaultSheetAnimator: Animatable {
+    public func animate(animations: @escaping () -> Void, completion: ((Bool) -> Void)?) {
+//        UIView.animate(withDuration: 0.3, // original
+//                       delay: 0,
+//                       usingSpringWithDamping: 0.8,
+//                       initialSpringVelocity: 0.8,
+//                       options: [.curveEaseInOut, .allowUserInteraction],
+//                       animations: animations,
+//                       completion: completion)
+        
+        
+        UIView.animate(withDuration: 0.7,
+                       delay: 0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.8,
+                       options: [.curveEaseOut, .allowUserInteraction],
+                       animations: animations,
+                       completion: completion)
+    }
+}
