@@ -23,3 +23,10 @@ public protocol Draggable {
     var bottomSheetManager: BottomSheetManagerProtocol?  { get set }
     func draggableView() -> UIScrollView?
 }
+
+///draggableView sets to nil by default. Set any scroll view to track.
+public extension Draggable {
+    func draggableView() -> UIScrollView? {
+        return nil
+    }
+}
