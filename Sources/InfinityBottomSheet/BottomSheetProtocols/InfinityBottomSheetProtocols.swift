@@ -52,3 +52,42 @@ public class DefaultSheetAnimator: Animatable {
                        completion: completion)
     }
 }
+
+//MARK: - EXTENSIONS
+
+extension UIViewController {
+    func ub_add(_ child: UIViewController,
+                in container: UIView,
+                animated: Bool,
+                topInset: CGFloat,
+                completion: (() -> Void)? = nil) {
+        addChild(child)
+        container.addSubview(child.view)
+        child.didMove(toParent: self)
+        let frame = CGRect(x: view.frame.minX,
+                           y: view.frame.minY,
+                           width: view.frame.width,
+                           height: view.frame.maxY - topInset)
+        if animated {
+            container.frame = frame.offsetBy(dx: 0, dy: frame.height)
+            child.view.frame = container.bounds
+            UIView.animate(withDuration: 0.3, animations: {
+                container.frame = frame
+            }) { _ in
+                completion?()
+            }
+        } else {
+            container.frame = frame
+            child.view.frame = container.bounds
+            completion?()
+        }
+        
+    }
+
+    func ub_remove() {
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
+    }
+
+}
