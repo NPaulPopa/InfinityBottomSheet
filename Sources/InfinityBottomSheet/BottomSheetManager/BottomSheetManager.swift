@@ -23,4 +23,12 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
     
     public var dragToDismiss: Bool = true
     
+    public func setToPosition(_ position: CGFloat, animated: Bool) {
+        
+        bottomSheetController.setToNearest(position, animated: animated)
+    }
+    
+    private var dismissDetents: CGFloat? {
+        dragToDismiss ? 1.1 : nil
+    }
   
