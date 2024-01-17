@@ -46,4 +46,18 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
         configureBottomSheet()
         addBottomSheet()
     }
-
+    
+    public func addSheetChild(child: DraggableItem) {
+        bottomSheetController.addSheetChild(child, completion: nil)
+    }
+    
+    public func showBottomSheetInNavigation() {
+        guard dismissInProgress == false else { return}
+        configureBottomSheet()
+        addBottomSheetInNavigation()
+    }
+    
+    public func dismissBottomSheet() {
+        removeBottomSheet()
+    }
+  
