@@ -71,4 +71,12 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
     
     private var bgView: UIView?
     private var dismissInProgress: Bool = false
-  
+    
+    //MARK: - Lifecycle
+    
+    public init(parentViewController: UIViewController,contentViewController: DraggableItem,navigationController: UINavigationController? = nil){
+        self.parentViewController = parentViewController
+        self.contentViewController = contentViewController
+        self.navigationController = navigationController
+    }
+   
