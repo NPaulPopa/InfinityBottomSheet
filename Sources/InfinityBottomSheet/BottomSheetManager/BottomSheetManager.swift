@@ -79,4 +79,20 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
         self.contentViewController = contentViewController
         self.navigationController = navigationController
     }
+    
+    //MARK: Configure BottomSheet
+    
+    private func configureBottomSheet() {
+        
+        guard bottomSheetController == nil else { return }
+                
+        self.bottomSheetController = BottomSheetController(
+            parent: parentViewController, dataSource: bottomSheetDataSource)
+        
+        self.bottomSheetController.setCornerRadius(cornerRadius)
+        
+        self.contentViewController.bottomSheetController = bottomSheetController
+        
+        self.bottomSheetController.delegate = self
+    }
    
