@@ -31,4 +31,19 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
     private var dismissDetents: CGFloat? {
         dragToDismiss ? 1.1 : nil
     }
-  
+    
+    ///Takes vlues between 0 and 1 and If not implemeted it returns the height set for smallDetents
+    public lazy var initialHeight: CGFloat = mediumDetents
+    
+    /// Set a new object who will implement the custom detents. If you only need to set custom detents then utilise detents properties
+    public lazy var bottomSheetDataSource: InfinityBottomSheetCoordinatorDataSource = self
+    
+    //MARK: - Public Methods
+
+    public func showBottomSheet() {
+        
+        guard dismissInProgress == false else { return}
+        configureBottomSheet()
+        addBottomSheet()
+    }
+
