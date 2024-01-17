@@ -60,4 +60,15 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
     public func dismissBottomSheet() {
         removeBottomSheet()
     }
+        
+    //MARK: - Private Properties
+    
+    private let parentViewController:  UIViewController
+    private var contentViewController: DraggableItem
+    private var bottomSheetController: BottomSheetProtocol!
+    private var navigationController: UINavigationController?
+
+    
+    private var bgView: UIView?
+    private var dismissInProgress: Bool = false
   
