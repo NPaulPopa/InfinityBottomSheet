@@ -131,3 +131,13 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
         }, completion: nil)
     }
   
+    
+    //MARK: Remove BottomSheet
+
+    private func removeBottomSheet() {
+        
+        self.bottomSheetController.removeBottomSheet(nil, completion: nil)
+
+        self.removeBackgroundDimmingView()
+    }
+}
