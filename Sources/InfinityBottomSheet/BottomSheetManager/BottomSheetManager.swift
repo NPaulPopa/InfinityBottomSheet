@@ -184,3 +184,15 @@ extension BottomSheetManager {
         propertyAnimator.startAnimation()
     }
  
+    
+    private func pin(subview: UIView, toParent parentView: UIView) {
+        
+        NSLayoutConstraint.activate([
+            
+            subview.topAnchor.constraint(equalTo: parentView.topAnchor),
+            subview.bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: 20),
+            subview.trailingAnchor.constraint(equalTo: parentView.trailingAnchor),
+            subview.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
+        ])
+    }
+ 
