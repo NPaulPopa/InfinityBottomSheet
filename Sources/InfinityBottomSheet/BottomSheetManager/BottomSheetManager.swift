@@ -95,4 +95,21 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
         
         self.bottomSheetController.delegate = self
     }
-   
+    
+    //MARK: Add BottomSheet
+    
+    private func addBottomSheet() {
+        
+        contentViewController.bottomSheetController = bottomSheetController
+        
+        contentViewController.bottomSheetManager = self
+        
+        bottomSheetController.addBottomSheet(contentViewController,
+            to: parentViewController, animated: true, didCreateContainerView: {
+                    
+                container in
+
+                self.addBackgroundDimmingView(under: container)
+                
+            }, completion: nil)
+    }
