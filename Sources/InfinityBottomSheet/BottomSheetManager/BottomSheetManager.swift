@@ -196,3 +196,19 @@ extension BottomSheetManager {
         ])
     }
  
+    
+    private func tabBarIsHidden(_ isHidden: Bool) {
+        
+        self.parentViewController.tabBarController?.tabBar.isHidden = isHidden
+    }
+    
+    private func configureBgViewState(for state: SheetTranslationState) {
+        
+        switch state {
+        case .progressing(_, let percent):
+            
+                bgView?.backgroundColor = UIColor.label.withAlphaComponent(percent/100 * 0.8)
+
+        case .finished(_, let percent):
+            
+     
