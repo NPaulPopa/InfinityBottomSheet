@@ -113,3 +113,21 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
                 
             }, completion: nil)
     }
+    
+    private func addBottomSheetInNavigation() {
+        
+        guard let navigationController = navigationController else { return }
+        
+        bottomSheetController.usesNavigationController = true
+        
+        contentViewController.bottomSheetController = bottomSheetController
+        
+        contentViewController.bottomSheetManager = self
+        
+        bottomSheetController.addBottomSheet(navigationController, to: parentViewController, animated: true, didCreateContainerView: { container in
+            
+            self.addBackgroundDimmingView(under: container)
+
+        }, completion: nil)
+    }
+  
