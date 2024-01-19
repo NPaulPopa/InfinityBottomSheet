@@ -168,3 +168,19 @@ extension BottomSheetManager {
         propertyAnimator.startAnimation()
     }
    
+    
+    private func removeBackgroundDimmingView() {
+        
+        let propertyAnimator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut) {
+            
+            self.tabBarIsHidden(false)
+            self.bgView?.alpha = 0
+        }
+        propertyAnimator.addCompletion { _ in
+
+            self.bgView?.removeFromSuperview()
+            self.bgView = nil
+        }
+        propertyAnimator.startAnimation()
+    }
+ 
