@@ -245,3 +245,8 @@ extension BottomSheetManager: InfinityBottomSheetCoordinatorDataSource {
         }
     }
  
+    
+    public func initialPosition(_ availableHeight: CGFloat) -> CGFloat {
+        return availableHeight * initialHeight //0.6//0.37
+    }
+}
