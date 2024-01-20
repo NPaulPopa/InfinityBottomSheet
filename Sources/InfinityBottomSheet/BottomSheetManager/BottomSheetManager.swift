@@ -267,4 +267,9 @@ extension BottomSheetManager: BottomSheetDelegate {
         configureBgViewState(for: state)
         delegate?.bottomSheet(container, didDismiss: state)
     }
-  
+    
+    public func bottomSheet(_ container: UIView?, finishTranslationWith animation: @escaping ((CGFloat) -> Void) -> Void) {
+        
+        animation { percent in
+            
+    
