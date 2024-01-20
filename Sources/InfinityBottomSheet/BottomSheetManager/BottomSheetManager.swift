@@ -229,3 +229,19 @@ extension BottomSheetManager {
         }
     }
 }
+
+
+//MARK: BottomSheet DataSource
+
+extension BottomSheetManager: InfinityBottomSheetCoordinatorDataSource {
+    
+    public func sheetPositions(_ availableHeight: CGFloat) -> [CGFloat] {
+        
+        return [smallDetents,mediumDetents,dismissDetents].compactMap{
+            
+            if let detent = $0 { return detent*availableHeight // [0.37, 0.6, 1.1]
+                
+            } else { return nil }
+        }
+    }
+ 
