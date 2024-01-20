@@ -262,3 +262,9 @@ extension BottomSheetManager: BottomSheetDelegate {
         delegate?.bottomSheet(container, didPresent: state)
     }
  
+    
+    public func bottomSheet(_ container: UIView?, didChange state: SheetTranslationState) {
+        configureBgViewState(for: state)
+        delegate?.bottomSheet(container, didDismiss: state)
+    }
+  
