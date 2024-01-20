@@ -211,4 +211,21 @@ extension BottomSheetManager {
 
         case .finished(_, let percent):
             
-     
+                bgView?.backgroundColor = UIColor.label.withAlphaComponent(percent/100 * 0.8)
+            
+            if percent < -20 {
+                
+                dismissInProgress = true
+                
+                bottomSheetController.removeBottomSheet(nil, completion: {_ in
+
+                    self.bgView?.removeFromSuperview()
+                    self.bgView = nil
+                    self.dismissInProgress = false
+                })
+                
+            }
+        default: break
+        }
+    }
+}
