@@ -250,3 +250,15 @@ extension BottomSheetManager: InfinityBottomSheetCoordinatorDataSource {
         return availableHeight * initialHeight //0.6//0.37
     }
 }
+
+
+//MARK: BottomSheet Delegate
+
+extension BottomSheetManager: BottomSheetDelegate {
+    
+    public func bottomSheet(_ container: UIView?, didPresent state: SheetTranslationState) {
+       
+        configureBgViewState(for: state)
+        delegate?.bottomSheet(container, didPresent: state)
+    }
+ 
