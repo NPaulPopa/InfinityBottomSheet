@@ -272,4 +272,11 @@ extension BottomSheetManager: BottomSheetDelegate {
         
         animation { percent in
             
-    
+            if percent < 0 {
+                let propertyAnimator = UIViewPropertyAnimator(duration: 0.1, curve: .easeOut) {
+                    
+                    self.tabBarIsHidden(false)
+                    
+                    self.bgView?.alpha = 0
+                }
+   
