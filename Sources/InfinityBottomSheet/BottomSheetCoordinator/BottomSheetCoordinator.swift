@@ -35,4 +35,7 @@ public protocol BottomSheetProtocol: AnyObject {
     
     func removeDropShadow()
     
+    func setCornerRadius(_ radius: CGFloat)
+    
+    func addShadow(customShadow: ((UIView) -> Void)?)
 }
