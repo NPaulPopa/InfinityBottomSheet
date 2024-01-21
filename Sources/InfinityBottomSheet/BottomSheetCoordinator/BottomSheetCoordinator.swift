@@ -29,4 +29,10 @@ public protocol BottomSheetProtocol: AnyObject {
                         animated: Bool ,
                         didCreateContainerView: ((UIView) -> Void)?,
                         completion: (() -> Void)?)
+
+    
+    func removeBottomSheet(_ block: ((_ container: UIView?) -> Void)?, completion: ((Bool) -> Void)?)
+    
+    func removeDropShadow()
+    
 }
