@@ -14,3 +14,9 @@ public class BottomSheetController: InfinityBottomSheetCoordinator {
         super.init(parent: parent, dataSource: dataSource, delegate: delegate)
     }
 }
+
+public enum SheetTranslationState {
+    case progressing(_ minYPosition: CGFloat, _ percent: CGFloat) //currently updating
+    case willFinish(_ minYPosition: CGFloat, _ percent: CGFloat) //animation start
+    case finished(_ minYPosition: CGFloat, _ percent: CGFloat) //animation end
+}
