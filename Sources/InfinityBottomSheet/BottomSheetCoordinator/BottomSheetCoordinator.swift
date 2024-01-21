@@ -20,3 +20,13 @@ public enum SheetTranslationState {
     case willFinish(_ minYPosition: CGFloat, _ percent: CGFloat) //animation start
     case finished(_ minYPosition: CGFloat, _ percent: CGFloat) //animation end
 }
+
+public protocol BottomSheetProtocol: AnyObject {
+    var dataSource: InfinityBottomSheetCoordinatorDataSource! { get set }
+    
+    func addBottomSheet(_ item: UIViewController,
+                        to parent: UIViewController,
+                        animated: Bool ,
+                        didCreateContainerView: ((UIView) -> Void)?,
+                        completion: (() -> Void)?)
+}
