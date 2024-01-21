@@ -279,4 +279,14 @@ extension BottomSheetManager: BottomSheetDelegate {
                     
                     self.bgView?.alpha = 0
                 }
-   
+                
+                propertyAnimator.addCompletion { _ in
+                    self.removeBottomSheet()
+                }
+                
+                propertyAnimator.startAnimation()
+            }
+                bgView?.backgroundColor = UIColor.label.withAlphaComponent(percent/100 * 0.8)
+        }
+    }
+}
