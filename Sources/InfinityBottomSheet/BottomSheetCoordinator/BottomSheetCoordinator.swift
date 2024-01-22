@@ -60,4 +60,16 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             maxSheetPosition = dataSource.sheetPositions(availableHeight).max()
         }
     }
+    
+    public weak var delegate: BottomSheetDelegate?
+    private var minSheetPosition: CGFloat?
+    private var maxSheetPosition: CGFloat?
+    
+    ///View controllers which conform to Draggable protocol
+    public var draggables: [DraggableItem] = []
+    
+    ///Drop shadow view behind container.
+    private var dropShadowView: PassThroughView?
+
+    private var tolerance: CGFloat = 0.0000001
 }
