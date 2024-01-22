@@ -72,4 +72,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     private var dropShadowView: PassThroughView?
 
     private var tolerance: CGFloat = 0.0000001
+    
+    ///set true if sheet view controller is embedded in a UINavigationController
+    public var usesNavigationController: Bool = false
+
+    public var availableHeight: CGFloat {
+        guard let parent = parent else { return 0 }
+        return parent.view.frame.height
+    }
 }
