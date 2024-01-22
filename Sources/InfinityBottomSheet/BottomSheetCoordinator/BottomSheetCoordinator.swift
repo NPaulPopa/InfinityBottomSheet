@@ -115,3 +115,22 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         maxSheetPosition = dataSource.sheetPositions(availableHeight).max()
     }
   
+    
+    /**
+     Creates a container view, sets contraints, set initial position, add background view if needed.
+     
+     You must handle add child on your own. This lets you apply your custom presenting animation.
+     # Example #
+     Call below code in parent view controller swift file.
+     
+     - parameter config: Called after container created. So you can customize the view, like shadow, corner radius, border, etc.
+     */
+    public func createContainer(with config: @escaping (UIView) -> Void) {
+        let view = PassThroughView()
+        self.container = view
+        config(view)
+        container?.pinToEdges(to: parent.view)
+        container?.constraint(parent, for: .top)?.constant = dataSource.sheetPositions(availableHeight)[0]
+        setPosition(dataSource.initialPosition(availableHeight), animated: false)
+    }
+}
