@@ -53,4 +53,11 @@ public protocol BottomSheetProtocol: AnyObject {
 public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     public weak var parent: UIViewController!
     private var container: UIView?
+    
+    public weak var dataSource: InfinityBottomSheetCoordinatorDataSource! {
+        didSet {
+            minSheetPosition = dataSource.sheetPositions(availableHeight).min()
+            maxSheetPosition = dataSource.sheetPositions(availableHeight).max()
+        }
+    }
 }
