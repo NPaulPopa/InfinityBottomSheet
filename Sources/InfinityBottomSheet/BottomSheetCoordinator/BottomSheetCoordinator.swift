@@ -38,4 +38,14 @@ public protocol BottomSheetProtocol: AnyObject {
     func setCornerRadius(_ radius: CGFloat)
     
     func addShadow(customShadow: ((UIView) -> Void)?)
+    
+    func setToNearest(_ position: CGFloat, animated: Bool)
+        
+    func startTracking<T: DraggableItem>(item: T)
+    
+    var usesNavigationController: Bool { get set }
+    
+    func addSheetChild(_ item: DraggableItem, completion:  ((Bool) -> Void)?)
+
+    var delegate: BottomSheetDelegate? { get set }
 }
