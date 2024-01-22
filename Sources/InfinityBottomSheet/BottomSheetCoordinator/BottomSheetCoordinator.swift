@@ -80,4 +80,38 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         guard let parent = parent else { return 0 }
         return parent.view.frame.height
     }
-}
+    
+    private var cornerRadius: CGFloat = 0 {
+        didSet {
+            applyDefaultShadowParams()
+            clearShadowBackground()
+        }
+    }
+
+    /**
+     Creates InfinityBottomSheetCoordinator object.
+     
+     Calling this in `viewWillLayoutSubviews` is recommended. So the parent frame will be ready to calculate sheet params. Otherwise sheet may show up with a wrong position and frame.
+     
+     ```
+     override func viewWillLayoutSubviews() {
+         super.viewWillLayoutSubviews()
+         // put your other stuff here
+     
+         guard sheetCoordinator == nil else {return}
+         sheetCoordinator = InfinityBottomSheetCoordinator(parent: self)
+     }
+     ```
+     - parameter parent: UIViewController
+     - parameter delegate: InfinityBottomSheetCoordinatorDelegate
+     */
+    public init(parent: UIViewController,dataSource: InfinityBottomSheetCoordinatorDataSource, delegate: BottomSheetDelegate? = nil) {
+        super.init()
+        self.parent = parent
+        self.dataSource = dataSource
+        self.delegate = delegate
+        
+        minSheetPosition = dataSource.sheetPositions(availableHeight).min()
+        maxSheetPosition = dataSource.sheetPositions(availableHeight).max()
+    }
+  
