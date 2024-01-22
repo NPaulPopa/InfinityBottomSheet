@@ -49,3 +49,8 @@ public protocol BottomSheetProtocol: AnyObject {
 
     var delegate: BottomSheetDelegate? { get set }
 }
+
+public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
+    public weak var parent: UIViewController!
+    private var container: UIView?
+}
