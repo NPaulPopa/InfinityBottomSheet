@@ -150,4 +150,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
                                completion: (() -> Void)? = nil) {
         
         self.usesNavigationController = item is UINavigationController
+        let container = PassThroughView()
+        self.container = container
+        parent.view.addSubview(container)
+        let position = dataSource.initialPosition(availableHeight)
+       
     }
