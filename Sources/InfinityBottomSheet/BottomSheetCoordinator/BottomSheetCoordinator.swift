@@ -174,4 +174,8 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter completion: called upon completion of animation
      */
     public func addSheetChild(_ item: DraggableItem, completion:  ((Bool) -> Void)? = nil) {
+        parent.addChild(item)
+        container!.addSubview(item.view)
+        item.didMove(toParent: parent)
+        item.view.frame = container!.bounds.offsetBy(dx: 0, dy: availableHeight)
     }
