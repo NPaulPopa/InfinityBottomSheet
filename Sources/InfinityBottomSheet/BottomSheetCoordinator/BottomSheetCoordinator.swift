@@ -178,4 +178,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         container!.addSubview(item.view)
         item.didMove(toParent: parent)
         item.view.frame = container!.bounds.offsetBy(dx: 0, dy: availableHeight)
+
+        UIView.animate(withDuration: 0.3) {
+            item.view.frame = self.container!.bounds
+        } completion: { finished in
+            completion?(finished)
+        }
     }
+  
