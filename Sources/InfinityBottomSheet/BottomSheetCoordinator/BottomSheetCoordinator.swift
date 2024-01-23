@@ -144,9 +144,10 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter completion: called upon the completion of adding item
      */
     public func addBottomSheet(_ item: UIViewController,
-                         to parent: UIViewController,
-                         animated: Bool = true,
-                         didCreateContainerView: ((UIView) -> Void)? = nil,
-                         completion: (() -> Void)? = nil) {
+                               to parent: UIViewController,
+                               animated: Bool = true,
+                               didCreateContainerView: ((UIView) -> Void)? = nil,
+                               completion: (() -> Void)? = nil) {
+        
+        self.usesNavigationController = item is UINavigationController
     }
-    
