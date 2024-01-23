@@ -133,4 +133,20 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         container?.constraint(parent, for: .top)?.constant = dataSource.sheetPositions(availableHeight)[0]
         setPosition(dataSource.initialPosition(availableHeight), animated: false)
     }
-}
+    
+    /**
+     Creates a container view, adds it as a child to the parent, sets contraints, set initial position, add background view if needed.
+     
+     - parameter item: view controller which conforms to the Draggable or navigation controller which contains draggable view controllers.
+     - parameter parent: parent view controller
+     - parameter animated: if true, the sheet is being added to the view controller using an animation (default is true).
+     - parameter didContainerCreate: triggered when container view created so you can modify the container if needed.
+     - parameter completion: called upon the completion of adding item
+     */
+    public func addBottomSheet(_ item: UIViewController,
+                         to parent: UIViewController,
+                         animated: Bool = true,
+                         didCreateContainerView: ((UIView) -> Void)? = nil,
+                         completion: (() -> Void)? = nil) {
+    }
+    
