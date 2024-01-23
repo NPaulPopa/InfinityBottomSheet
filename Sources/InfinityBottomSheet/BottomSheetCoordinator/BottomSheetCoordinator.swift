@@ -166,3 +166,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         didCreateContainerView?(container)
         setPosition(dataSource.initialPosition(availableHeight), animated: false)
     }
+    
+    /**
+     Adds a new view child controller to the current container view
+     
+     - parameter item: view controller which conforms to the Draggable protocol
+     - parameter completion: called upon completion of animation
+     */
+    public func addSheetChild(_ item: DraggableItem, completion:  ((Bool) -> Void)? = nil) {
+    }
