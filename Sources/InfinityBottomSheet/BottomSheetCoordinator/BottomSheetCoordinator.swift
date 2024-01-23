@@ -155,4 +155,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         parent.view.addSubview(container)
         let position = dataSource.initialPosition(availableHeight)
        
+        parent.ub_add(item, in: container, animated: animated, topInset: position) { [weak self] in
+            guard let self = self else { return }
+            
+            self.delegate?.bottomSheet(container,
+                                        didPresent: .finished(position, self.calculatePercent(at: position)))
+            completion?()
+        }
+        
+        didCreateContainerView?(container)
+        setPosition(dataSource.initialPosition(availableHeight), animated: false)
     }
