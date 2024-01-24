@@ -11,17 +11,4 @@ public protocol BottomSheetManagerProtocol: AnyObject {
     
     var dragToDismiss: Bool { get set}
     var cornerRadius: CGFloat { get set}
-    var smallDetents: CGFloat { get set}
-    var mediumDetents: CGFloat { get set }
-    var largeDetents: CGFloat { get set }
-    var initialHeight: CGFloat { get set }
-    
-    func addSheetChild(child: DraggableItem)
-    
-    var bottomSheetDataSource: InfinityBottomSheetCoordinatorDataSource { get set}
-    
-    func showBottomSheet()
-    func dismissBottomSheet()
-    func setToPosition(_ position: CGFloat,animated: Bool)
-}
-
+ 
