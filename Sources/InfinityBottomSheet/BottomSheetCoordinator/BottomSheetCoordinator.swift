@@ -196,4 +196,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
                       width: parent.view.bounds.width,
                       height: parent.view.bounds.maxY - minY)
     }
- 
+    
+    /**
+     Adds a drop shadow to the sheet.
+     
+     Use  ```removeDropShadow()``` to remove drop shadow.
+     */
+    public func addShadow(customShadow config: ((UIView) -> Void)? = nil) {
+        guard dropShadowView == nil else {
+            return
+        }
+    }
