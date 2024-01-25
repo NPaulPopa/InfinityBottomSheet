@@ -185,4 +185,15 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             completion?(finished)
         }
     }
-  
+    
+    /**
+     Frame of the sheet when added.
+     */
+    private func getInitialFrame() -> CGRect {
+        let minY = parent.view.bounds.minY + dataSource.initialPosition(availableHeight)
+        return CGRect(x: parent.view.bounds.minX,
+                      y: minY,
+                      width: parent.view.bounds.width,
+                      height: parent.view.bounds.maxY - minY)
+    }
+ 
