@@ -214,4 +214,13 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
                                                         left: 0,
                                                         bottom: 0,
                                                         right: 0))
+        
+        self.dropShadowView?.layer.masksToBounds = false
+        if config == nil {
+            applyDefaultShadowParams()
+            clearShadowBackground()
+        } else {
+            config?(dropShadowView!)
+        }
     }
+ 
