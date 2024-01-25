@@ -206,4 +206,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         guard dropShadowView == nil else {
             return
         }
+        
+        dropShadowView = PassThroughView()
+        parent.view.insertSubview(dropShadowView!, belowSubview: container!)
+        dropShadowView?.pinToEdges(to: container!,
+                                   insets: UIEdgeInsets(top: -getInitialFrame().minY,
+                                                        left: 0,
+                                                        bottom: 0,
+                                                        right: 0))
     }
