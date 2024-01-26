@@ -241,5 +241,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         dropShadowView?.layer.shadowOpacity = 0.9// 0.08 // alpha
         dropShadowView?.layer.shadowOffset = CGSize(width: 0, height: -15.5 / 3) //y
         dropShadowView?.layer.shadowRadius = 11.2/3//12 / 3 //blur
+        
+        let dx = 11.2 / 3 // -spread
+        let rect = getInitialFrame().insetBy(dx: CGFloat(dx - 8), dy: CGFloat(dx - 1))
+        dropShadowView?.layer.shadowPath = UIBezierPath(roundedRect: rect,
+                                                        cornerRadius: cornerRadius).cgPath
     }
-
