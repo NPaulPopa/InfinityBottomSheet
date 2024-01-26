@@ -246,4 +246,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         let rect = getInitialFrame().insetBy(dx: CGFloat(dx - 8), dy: CGFloat(dx - 1))
         dropShadowView?.layer.shadowPath = UIBezierPath(roundedRect: rect,
                                                         cornerRadius: cornerRadius).cgPath
+        
+        let animation = CABasicAnimation(keyPath: "shadowOpacity")
+        animation.fromValue = 0.0
+        animation.toValue = 0.5
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = .forwards
+        animation.duration = 0.5
+        dropShadowView?.layer.add(animation, forKey: "fadeout")
     }
