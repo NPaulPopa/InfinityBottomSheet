@@ -270,3 +270,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         dropShadowView?.layer.mask = mask
     }
     
+    /**
+     Adjust drop shadow corner radius if exists.
+     
+     - parameter radius: corner radius
+     */
+    public func setCornerRadius(_ radius: CGFloat) {
+        self.cornerRadius = radius
+    }
+    
+    
+
