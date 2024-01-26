@@ -255,3 +255,10 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         animation.duration = 0.5
         dropShadowView?.layer.add(animation, forKey: "fadeout")
     }
+
+    /**
+     When using UIVisualEffectView or a transparent sheet background. Use this metohd need to cut out the shadow's part which intersects the sheet frame
+     */
+    private func clearShadowBackground() {
+        
+    }
