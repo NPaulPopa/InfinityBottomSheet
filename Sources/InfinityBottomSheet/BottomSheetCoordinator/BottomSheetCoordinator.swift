@@ -235,4 +235,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      Applies default drop shadow params. i.e. color, radius, offset...
      */
     private func applyDefaultShadowParams() {
+        
+        dropShadowView?.layer.masksToBounds = false
+        dropShadowView?.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.08).cgColor //0.18 color
+        dropShadowView?.layer.shadowOpacity = 0.9// 0.08 // alpha
+        dropShadowView?.layer.shadowOffset = CGSize(width: 0, height: -15.5 / 3) //y
+        dropShadowView?.layer.shadowRadius = 11.2/3//12 / 3 //blur
     }
+
