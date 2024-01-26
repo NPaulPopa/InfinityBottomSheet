@@ -261,4 +261,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      */
     private func clearShadowBackground() {
         
+        let p = CGMutablePath()
+        p.addRect(parent.view.bounds.insetBy(dx: 0, dy: -availableHeight))
+        p.addPath(UIBezierPath(roundedRect: getInitialFrame(), cornerRadius: cornerRadius).cgPath)
+        let mask = CAShapeLayer()
+        mask.path = p
+        mask.fillRule = .evenOdd
+        dropShadowView?.layer.mask = mask
     }
+    
