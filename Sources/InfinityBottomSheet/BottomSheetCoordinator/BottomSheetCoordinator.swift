@@ -225,9 +225,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     }
     
     /**
-     Removes drop shadow added using  `addDropShadowIfNeeded()`
+     Removes drop shadow added withfunc  `addDropShadowIfNotExist()`
      */
     public func removeDropShadow() {
         dropShadowView?.removeFromSuperview()
     }
-   
+    
+    /**
+     Applies default drop shadow params. i.e. color, radius, offset...
+     */
+    private func applyDefaultShadowParams() {
+    }
