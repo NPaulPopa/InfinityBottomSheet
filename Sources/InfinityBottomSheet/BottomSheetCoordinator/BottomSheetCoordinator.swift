@@ -299,7 +299,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
          setPosition(y, animated: animated)
      }
     
-
+    /**
+     Remove child view controller from the container.
+     
+     - parameter item: view controller which conforms to the Draggable protocol
+     - parameter completion: called upon completion of animation
+     */
+    public func removeSheetChild<T: DraggableItem>(item: T, completion: ((Bool) -> Void)? = nil) {
+    }
 
 
 
