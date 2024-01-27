@@ -316,4 +316,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             completion?(finished)
         }
     }
-   
+    
+    /**
+     Remove sheet from the parent.
+     
+     - parameter block: use this closure to apply custom sheet dismissal animation
+     - parameter completion: called upon completion of animation
+     
+     */
+    public func removeBottomSheet(_ block: ((_ container: UIView?) -> Void)? = nil, completion: ((Bool) -> Void)? = nil) {
+        
+    }
