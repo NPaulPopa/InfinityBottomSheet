@@ -306,7 +306,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter completion: called upon completion of animation
      */
     public func removeSheetChild<T: DraggableItem>(item: T, completion: ((Bool) -> Void)? = nil) {
+        stopTracking(item: item)
+        let _item = usesNavigationController ? item.navigationController! : item
+       
     }
+
 
 
 
