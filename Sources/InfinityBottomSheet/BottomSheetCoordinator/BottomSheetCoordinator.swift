@@ -288,4 +288,18 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      public func setPosition(_ minYPosition: CGFloat, animated: Bool) {
          self.endTranslate(to: minYPosition, animated: animated)
      }
-  
+     
+     /**
+      Set sheet top constraint value to the nearest sheet positions to given y position.
+      - parameter minYPosition: new y position.
+      - parameter animated: pass true to animate sheet position change; false otherwise.
+      */
+     public func setToNearest(_ pos: CGFloat, animated: Bool) {
+         let y = dataSource.sheetPositions(availableHeight).nearest(to: pos)
+         setPosition(y, animated: animated)
+     }
+    
+
+
+
+
