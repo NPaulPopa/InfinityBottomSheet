@@ -309,8 +309,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         stopTracking(item: item)
         let _item = usesNavigationController ? item.navigationController! : item
        
+        UIView.animate(withDuration: 0.3, animations: {
+            _item.view.frame = _item.view.frame.offsetBy(dx: 0, dy: _item.view.frame.height)
+        }) { (finished) in
+            _item.ub_remove()
+            completion?(finished)
+        }
     }
-
-
-
-
+   
