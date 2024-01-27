@@ -279,5 +279,13 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         self.cornerRadius = radius
     }
     
-    
-
+    /**
+      Set sheet top constraint value to the given new y position.
+      
+      - parameter minYPosition: new y position.
+      - parameter animated: pass true to animate sheet position change; false otherwise.
+      */
+     public func setPosition(_ minYPosition: CGFloat, animated: Bool) {
+         self.endTranslate(to: minYPosition, animated: animated)
+     }
+  
