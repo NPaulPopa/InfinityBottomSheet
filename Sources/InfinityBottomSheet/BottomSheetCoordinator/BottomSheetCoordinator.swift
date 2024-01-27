@@ -325,5 +325,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      
      */
     public func removeBottomSheet(_ block: ((_ container: UIView?) -> Void)? = nil, completion: ((Bool) -> Void)? = nil) {
-        
+        self.draggables.removeAll()
+        guard block == nil else {
+            block?(container)
+            return
+        }
     }
