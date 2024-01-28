@@ -355,4 +355,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             vc == item
         }
     }
-   
+     
+    /**
+     Add pan gesture recognizer to the view controller.
+     
+     - parameter item: view controller which conforms to the Draggable protocol
+     */
+    public func startTracking<T: DraggableItem>(item: T) {
+        guard !isTracking(item: item) else {
+            return
+        }
+    }
