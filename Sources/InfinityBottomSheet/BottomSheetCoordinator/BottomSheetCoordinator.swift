@@ -330,4 +330,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             block?(container)
             return
         }
+       
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            guard let self = self else {
+                return
+            }
+        }
+                       
     }
