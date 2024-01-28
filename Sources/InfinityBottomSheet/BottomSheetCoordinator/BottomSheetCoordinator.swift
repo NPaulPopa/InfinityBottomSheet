@@ -335,6 +335,13 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             guard let self = self else {
                 return
             }
+            
+            self.container!.frame = self.container!.frame.offsetBy(dx: 0, dy:  self.parent.view.frame.height)
+        }) { [weak self ] finished in
+            self?.container?.removeFromSuperview()
+            self?.removeDropShadow()
+            completion?(finished)
         }
-                       
     }
+    
+  
