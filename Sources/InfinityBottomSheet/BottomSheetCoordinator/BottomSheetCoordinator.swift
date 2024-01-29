@@ -365,4 +365,7 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         guard !isTracking(item: item) else {
             return
         }
+        
+        item.draggableView()?.panGestureRecognizer.addTarget(self, action: #selector(handleScrollPan(_:)))
+        let pan = UIPanGestureRecognizer(target: self, action:  #selector(handleViewPan(_:)))
     }
