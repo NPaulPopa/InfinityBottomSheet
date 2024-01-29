@@ -381,4 +381,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             vc == item
         }
     }
-  
+    
+    /**
+     Container view pan gesture event
+     - parameter recognizer: view pan gesture  object.
+    */
+    @objc private func handleViewPan(_ recognizer: UIPanGestureRecognizer) {
+        handlePan(recognizer)
+    }
