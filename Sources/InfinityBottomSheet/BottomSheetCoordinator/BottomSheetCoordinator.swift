@@ -400,4 +400,7 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         }
         handlePan(recognizer, scrollView: scrollView)
     }
-   
+    
+    /// Holds last scroll view content offset to stop scrolling while driving the view
+    private var lastContentOffset: CGPoint = .zero
+  
