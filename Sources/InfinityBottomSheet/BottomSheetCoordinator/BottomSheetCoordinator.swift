@@ -389,3 +389,15 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     @objc private func handleViewPan(_ recognizer: UIPanGestureRecognizer) {
         handlePan(recognizer)
     }
+
+    /**
+     Scrollable view pan gesture event
+     - parameter recognizer: scroll view pan gesture object.
+    */
+    @objc private func handleScrollPan(_ recognizer: UIPanGestureRecognizer) {
+        guard let scrollView = recognizer.view as? UIScrollView else {
+            return
+        }
+        handlePan(recognizer, scrollView: scrollView)
+    }
+   
