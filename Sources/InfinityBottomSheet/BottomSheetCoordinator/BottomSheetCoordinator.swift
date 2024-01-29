@@ -376,4 +376,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         draggables.append(item)
     }
     
+    func stopTracking<T: DraggableItem>(item: T){
+        draggables.removeAll { (vc) -> Bool in
+            vc == item
+        }
+    }
   
