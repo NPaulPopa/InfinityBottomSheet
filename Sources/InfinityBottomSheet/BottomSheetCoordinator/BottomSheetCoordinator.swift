@@ -372,4 +372,8 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         let navBarPan = UIPanGestureRecognizer(target: self, action:  #selector(handleViewPan(_:)))
         pan.delegate = self
         navBarPan.delegate = self
+        item.navigationController?.navigationBar.addGestureRecognizer(navBarPan)
+        draggables.append(item)
     }
+    
+  
