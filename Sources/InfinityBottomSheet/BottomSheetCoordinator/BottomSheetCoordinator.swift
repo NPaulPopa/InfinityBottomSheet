@@ -423,5 +423,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
                 //set last contentOffset y value by adding 'dy' i.e. pre pan gesture happened.
                 lastContentOffset.y = scroll.contentOffset.y + dy
             }
+            totalTranslationMinY = minSheetPosition!
+            totalTranslationMaxY = maxSheetPosition!
+            translate(with: vel, dy: dy, scrollView: scrollView)
+            delegate?.bottomSheet(hasBeganWithVelocity: vel)
         }
     }
