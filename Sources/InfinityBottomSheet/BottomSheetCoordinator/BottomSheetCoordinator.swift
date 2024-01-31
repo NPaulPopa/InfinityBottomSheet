@@ -427,5 +427,8 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             totalTranslationMaxY = maxSheetPosition!
             translate(with: vel, dy: dy, scrollView: scrollView)
             delegate?.bottomSheet(hasBeganWithVelocity: vel)
+        case .changed:
+            delegate?.bottomSheet(didChangePanWithVelocity: vel)
+            translate(with: vel, dy: dy, scrollView: scrollView)
         }
     }
