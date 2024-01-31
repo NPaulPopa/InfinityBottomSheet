@@ -403,4 +403,6 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     
     /// Holds last scroll view content offset to stop scrolling while driving the view
     private var lastContentOffset: CGPoint = .zero
+    /// As recognizer.setTranslation(.zero, ...) breaks scrollView functionality when driving with scroll view last y translation is used to find the change in y position (dy).
+    private var lastY: CGFloat = 0
   
