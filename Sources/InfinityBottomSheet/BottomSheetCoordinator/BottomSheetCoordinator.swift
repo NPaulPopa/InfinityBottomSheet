@@ -405,4 +405,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     private var lastContentOffset: CGPoint = .zero
     /// As recognizer.setTranslation(.zero, ...) breaks scrollView functionality when driving with scroll view last y translation is used to find the change in y position (dy).
     private var lastY: CGFloat = 0
-  
+    
+    /**
+     Common handler for view and scroll view pan gesture event. drives the sheet according to the container view or scroll view gesture events.
+     
+     - parameter recognizer: Pan gesture recognizer object.
+     - parameter scrollView: set if scrollView gesture event
+    */
+    private func handlePan(_ recognizer: UIPanGestureRecognizer, scrollView: UIScrollView? = nil) {
+        let dy = recognizer.translation(in: recognizer.view).y
+        let vel = recognizer.velocity(in: recognizer.view)
+    }
