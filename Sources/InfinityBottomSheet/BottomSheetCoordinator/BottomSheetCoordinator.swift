@@ -415,4 +415,13 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     private func handlePan(_ recognizer: UIPanGestureRecognizer, scrollView: UIScrollView? = nil) {
         let dy = recognizer.translation(in: recognizer.view).y
         let vel = recognizer.velocity(in: recognizer.view)
+                
+        switch recognizer.state {
+        case .began:
+            lastY = 0
+            if let scroll = scrollView {
+                //set last contentOffset y value by adding 'dy' i.e. pre pan gesture happened.
+                lastContentOffset.y = scroll.contentOffset.y + dy
+            }
+        }
     }
