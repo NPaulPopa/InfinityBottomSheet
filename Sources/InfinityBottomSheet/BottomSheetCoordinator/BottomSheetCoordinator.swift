@@ -437,5 +437,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
                 self.finishDragging(with: vel, position: container!.frame.minY + dy - lastY)
                 return
             }
+            
+            let minY = container!.frame.minY
         }
     }
+
+
