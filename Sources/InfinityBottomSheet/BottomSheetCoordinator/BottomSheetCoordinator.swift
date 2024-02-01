@@ -453,3 +453,14 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         }
         
     }
+
+    /**
+     Move view according to the pan gesture recognizer parameters
+     
+     - parameter velocity: draging velocity of scroll view recognizer
+     - parameter dy: change in the y direction of pan gesture realtive to the gesture began position
+     - parameter scrollView: set if scrollView gesture event
+     */
+    func translate(with velocity: CGPoint, dy: CGFloat, scrollView: UIScrollView? = nil) {
+   
+    }
