@@ -430,5 +430,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         case .changed:
             delegate?.bottomSheet(didChangePanWithVelocity: vel)
             translate(with: vel, dy: dy, scrollView: scrollView)
+        case .ended,
+             .cancelled,
+             .failed:
+            guard let scroll = scrollView else {
+                self.finishDragging(with: vel, position: container!.frame.minY + dy - lastY)
+                return
+            }
         }
     }
