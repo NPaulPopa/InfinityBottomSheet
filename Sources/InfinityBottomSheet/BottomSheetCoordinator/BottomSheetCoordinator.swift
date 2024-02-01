@@ -439,7 +439,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             }
             
             let minY = container!.frame.minY
+            
+            switch dragDirection(vel) {
+            case .up where minY - minSheetPosition! > tolerance:
+                scroll.setContentOffset(lastContentOffset, animated: false)
+                self.finishDragging(with: vel, position: minY)
+            }
         }
     }
-
-
