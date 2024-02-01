@@ -462,5 +462,8 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter scrollView: set if scrollView gesture event
      */
     func translate(with velocity: CGPoint, dy: CGFloat, scrollView: UIScrollView? = nil) {
-   
+        if let scroll = scrollView {
+            switch dragDirection(velocity) {
+            }
+        }
     }
