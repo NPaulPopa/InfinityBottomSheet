@@ -464,6 +464,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     func translate(with velocity: CGPoint, dy: CGFloat, scrollView: UIScrollView? = nil) {
         if let scroll = scrollView {
             switch dragDirection(velocity) {
+            case .up where (container!.frame.minY - minSheetPosition! > tolerance):
+                applyTranslation(dy: dy - lastY)
+                scroll.contentOffset.y = lastContentOffset.y
             }
         }
     }
