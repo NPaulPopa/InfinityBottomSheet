@@ -444,6 +444,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             case .up where minY - minSheetPosition! > tolerance:
                 scroll.setContentOffset(lastContentOffset, animated: false)
                 self.finishDragging(with: vel, position: minY)
+            default:
+                if !isSheetPosition(minY) {
+                    self.finishDragging(with: vel, position: minY)
+                }
             }
+        default: break
         }
+        
     }
