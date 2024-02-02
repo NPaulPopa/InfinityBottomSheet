@@ -498,4 +498,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     private enum DraggingState {
         case up, down, idle
     }
- 
+    
+    /**
+     Find the scroll pan direction; dragging up or down.
+     
+     - parameter velocity: draging velocity of scroll view recognizer
+     */
+    private func dragDirection(_ velocity: CGPoint) -> DraggingState {
+    }
