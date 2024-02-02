@@ -481,3 +481,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         lastY = dy
     }
     
+    
+    /**
+     Check if current top y position is one of the InfinityBottomSheetCoordinatorDataSource#sheetPositions(availableHeight)
+     
+     - parameter point: current top y position
+     */
+    private func isSheetPosition(_ point: CGFloat) -> Bool {
+   
+    }
