@@ -493,4 +493,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         }) != nil
     }
   
-
+    
+    /// Scroll view pan direction state: up, down or idle
+    private enum DraggingState {
+        case up, down, idle
+    }
+ 
