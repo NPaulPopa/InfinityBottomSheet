@@ -505,4 +505,13 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter velocity: draging velocity of scroll view recognizer
      */
     private func dragDirection(_ velocity: CGPoint) -> DraggingState {
+        if velocity.y < 0 {
+            return .up
+        } else if velocity.y > 0 {
+            return .down
+        } else {
+            return .idle
+        }
     }
+    
+  
