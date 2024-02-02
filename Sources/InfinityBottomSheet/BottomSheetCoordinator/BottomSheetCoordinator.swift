@@ -488,5 +488,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter point: current top y position
      */
     private func isSheetPosition(_ point: CGFloat) -> Bool {
-   
+        return dataSource.sheetPositions(availableHeight).first(where: { foundPoint -> Bool in
+            abs(foundPoint - point) < tolerance
+        }) != nil
     }
+  
+
