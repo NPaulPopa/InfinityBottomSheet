@@ -467,6 +467,12 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             case .up where (container!.frame.minY - minSheetPosition! > tolerance):
                 applyTranslation(dy: dy - lastY)
                 scroll.contentOffset.y = lastContentOffset.y
+            case .down where scroll.contentOffset.y <= 0 :
+                applyTranslation(dy: dy - lastY)
+                scroll.contentOffset.y = 0
+                lastContentOffset = .zero
+            default:
+                break
             }
         }
     }
