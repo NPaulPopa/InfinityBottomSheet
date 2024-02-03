@@ -523,5 +523,13 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter currentPosition: current top constraint value of container view
      */
     private func filteredPositions(_ velocity: CGPoint, currentPosition: CGFloat) -> [CGFloat] {
-        guard let dataSource = dataSource else { return [0,0] }
+        guard let dataSource = dataSource else {
+            return [0,0] }
+        
+        if velocity.y < -100 { /// dragging up
+           
+            let data = dataSource.sheetPositions(availableHeight).filter { (p) -> Bool in
+                p < currentPosition
+            }
+        }
     }
