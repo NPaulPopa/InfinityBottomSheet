@@ -514,4 +514,6 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         }
     }
     
-  
+ 
+    private func filteredPositions(_ velocity: CGPoint, currentPosition: CGFloat) -> [CGFloat] {
+    }
