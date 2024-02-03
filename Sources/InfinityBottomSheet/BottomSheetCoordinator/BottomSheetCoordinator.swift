@@ -537,5 +537,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             } else {
                 return data
             }
+        } else if velocity.y > 100 { /// dragging down
+            let data = dataSource.sheetPositions(availableHeight).filter { (p) -> Bool in
+                p > currentPosition
+            }
         }
     }
