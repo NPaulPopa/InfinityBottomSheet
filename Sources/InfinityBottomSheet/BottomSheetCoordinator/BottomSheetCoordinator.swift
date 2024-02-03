@@ -541,5 +541,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             let data = dataSource.sheetPositions(availableHeight).filter { (p) -> Bool in
                 p > currentPosition
             }
+            
+            if data.isEmpty {
+                return dataSource.sheetPositions(availableHeight)
+            } else {
+                return data
+            }
         }
     }
