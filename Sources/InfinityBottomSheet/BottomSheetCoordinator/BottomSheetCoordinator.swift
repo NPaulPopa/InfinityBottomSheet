@@ -514,6 +514,13 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         }
     }
     
- 
+    /**
+     It helps when finishing dragging to the nearest sheet position in the direction of movement.
+     
+     i.e. for the given sheet positions ```[0.1, 0.5, 0.8].map{$0*availableHeight}``` if recognizer finishes while dragging up at  ```0.45*availableHeight``` the positions lower than 0.45 wiill be filtered and sheet will move to the ```0.1*availableHeight```.
+     
+     - parameter velocity: draging velocity of recognizer
+     - parameter currentPosition: current top constraint value of container view
+     */
     private func filteredPositions(_ velocity: CGPoint, currentPosition: CGFloat) -> [CGFloat] {
     }
