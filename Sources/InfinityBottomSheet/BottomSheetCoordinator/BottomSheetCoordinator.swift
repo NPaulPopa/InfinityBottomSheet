@@ -555,3 +555,6 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     
     /// y translation value for top rubber banding calculation
     private var totalTranslationMinY: CGFloat!
+    ///  y translation value for bottom rubber banding calculation
+    private var totalTranslationMaxY: CGFloat!
+  
