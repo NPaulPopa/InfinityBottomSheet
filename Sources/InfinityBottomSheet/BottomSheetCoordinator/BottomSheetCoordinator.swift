@@ -547,5 +547,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             } else {
                 return data
             }
+            
+        } else {
+            return dataSource.sheetPositions(availableHeight)
         }
     }
+  
