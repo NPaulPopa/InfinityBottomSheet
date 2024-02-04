@@ -566,4 +566,7 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     private func applyTranslation(dy: CGFloat) {
         guard let dataSource = dataSource else { return }
         guard dy != 0 else { return }
+        
+        let topLimit = minSheetPosition!
+        let bottomLimit = maxSheetPosition!
     }
