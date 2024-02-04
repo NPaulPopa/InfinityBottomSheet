@@ -569,4 +569,7 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         
         let topLimit = minSheetPosition!
         let bottomLimit = maxSheetPosition!
+        
+        let oldFrame = container!.frame
+        var newY = oldFrame.minY
     }
