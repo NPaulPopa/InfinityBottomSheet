@@ -564,4 +564,6 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter dy: change in the y direction of pan gesture
      */
     private func applyTranslation(dy: CGFloat) {
+        guard let dataSource = dataSource else { return }
+        guard dy != 0 else { return }
     }
