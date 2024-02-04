@@ -557,4 +557,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     private var totalTranslationMinY: CGFloat!
     ///  y translation value for bottom rubber banding calculation
     private var totalTranslationMaxY: CGFloat!
-  
+    
+    /**
+     Drives container view according the given value
+     
+     - parameter dy: change in the y direction of pan gesture
+     */
+    private func applyTranslation(dy: CGFloat) {
+    }
