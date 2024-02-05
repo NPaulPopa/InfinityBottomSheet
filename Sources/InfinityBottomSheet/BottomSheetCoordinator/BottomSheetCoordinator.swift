@@ -572,4 +572,8 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         
         let oldFrame = container!.frame
         var newY = oldFrame.minY
+        
+        if hasExceededTopLimit(oldFrame.minY + dy, topLimit) {
+            let yy = min(0 , topLimit - oldFrame.minY)
+        }
     }
