@@ -583,5 +583,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             totalTranslationMinY = minSheetPosition!
             totalTranslationMaxY += (dy - yy)
             newY = dataSource.rubberBandLogicBottom(totalTranslationMaxY, bottomLimit)
+        } else {
+            totalTranslationMinY = minSheetPosition!
+            totalTranslationMaxY = maxSheetPosition!
+            newY += dy
         }
     }
