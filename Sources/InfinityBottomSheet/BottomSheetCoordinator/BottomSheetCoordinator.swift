@@ -588,4 +588,7 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             totalTranslationMaxY = maxSheetPosition!
             newY += dy
         }
+        
+        let height = max(availableHeight - minSheetPosition!, availableHeight - newY)
+        let frame = CGRect(x: 0, y: newY, width: oldFrame.width, height: height)
     }
