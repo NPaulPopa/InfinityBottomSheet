@@ -575,5 +575,8 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         
         if hasExceededTopLimit(oldFrame.minY + dy, topLimit) {
             let yy = min(0 , topLimit - oldFrame.minY)
+            totalTranslationMinY -= (dy - yy)
+            totalTranslationMaxY = maxSheetPosition!
+            newY = dataSource.rubberBandLogicTop(totalTranslationMinY, topLimit)
         }
     }
