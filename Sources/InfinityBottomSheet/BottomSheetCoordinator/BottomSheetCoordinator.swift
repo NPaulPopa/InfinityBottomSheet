@@ -593,4 +593,16 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         let frame = CGRect(x: 0, y: newY, width: oldFrame.width, height: height)
         container?.frame = frame
         
+        self.delegate?.bottomSheet(self.container,
+                                   didChange: .progressing(frame.minY, calculatePercent(at: frame.minY)))
     }
+    
+    /**
+     Pan gesture finish event
+     
+     - parameter velocity: Pan gesture velocity
+     - parameter position: new top constraint value
+     */
+    private func finishDragging(with velocity: CGPoint, position: CGFloat) {
+    }
+}
