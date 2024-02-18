@@ -610,4 +610,15 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     
     //to ignore previous animation completion events
     private var lastAnimatedValue: CGFloat = 0.0
-}
+    
+    /**
+     Drives the view to the given position with animation option
+     
+     - parameter position: new top constraint value
+     - parameter animated: Pass true to animate the y position change; otherwise pass false.
+     */
+    private func endTranslate(to position: CGFloat, animated: Bool = false) {
+        guard position != 0 else {
+            return
+        }
+    }
