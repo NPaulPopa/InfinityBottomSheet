@@ -604,5 +604,10 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter position: new top constraint value
      */
     private func finishDragging(with velocity: CGPoint, position: CGFloat) {
+        let y = filteredPositions(velocity, currentPosition: position).nearest(to: position)
+        endTranslate(to: y, animated: true)
     }
+    
+    //to ignore previous animation completion events
+    private var lastAnimatedValue: CGFloat = 0.0
 }
