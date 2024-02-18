@@ -621,4 +621,8 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         guard position != 0 else {
             return
         }
+        
+        let oldFrame = container!.frame
+        let height = max(availableHeight - minSheetPosition!, availableHeight - position)
+        let frame = CGRect(x: 0, y: position, width: oldFrame.width, height: height)
     }
