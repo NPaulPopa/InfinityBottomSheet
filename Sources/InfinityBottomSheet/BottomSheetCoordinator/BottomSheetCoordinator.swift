@@ -625,4 +625,7 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         let oldFrame = container!.frame
         let height = max(availableHeight - minSheetPosition!, availableHeight - position)
         let frame = CGRect(x: 0, y: position, width: oldFrame.width, height: height)
+        
+        self.delegate?.bottomSheet(self.container,
+                                   didChange: .willFinish(position, self.calculatePercent(at: position)))
     }
