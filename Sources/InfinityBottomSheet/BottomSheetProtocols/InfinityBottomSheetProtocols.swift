@@ -92,7 +92,7 @@ extension UIViewController {
 
 }
 
-extension UIView {
+public extension UIView {
     func pinToEdges(to view: UIView, insets: UIEdgeInsets = .zero) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top).isActive = true
@@ -105,6 +105,10 @@ extension UIView {
         return parent.view.constraints.first(where: { (constraint) -> Bool in
             constraint.firstItem as? UIView == self && constraint.firstAttribute == attribute
          })
+    }
+    
+    public static func scaledConstant(fromPixels pixels: CGFloat, deviceScale: CGFloat) -> CGFloat {
+        pixels / deviceScale
     }
 }
 
