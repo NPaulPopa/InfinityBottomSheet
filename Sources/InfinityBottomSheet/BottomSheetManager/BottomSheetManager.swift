@@ -11,7 +11,7 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
     
     //MARK: - Public Properties
     
-    weak var delegate: BottomSheetManagerDelegate?
+    public weak var delegate: BottomSheetManagerDelegate?
 
     public var cornerRadius: CGFloat = 20
     
