@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol BottomSheetManagerDelegate: AnyObject {
+public protocol BottomSheetManagerDelegate: AnyObject {
     
     func bottomSheet(_ container: UIView?, didPresent state: SheetTranslationState)
     func bottomSheet(_ container: UIView?, didChange state: SheetTranslationState)
     func bottomSheet(_ container: UIView?, didDismiss state: SheetTranslationState)
 }
 
-extension BottomSheetManagerDelegate {
+public extension BottomSheetManagerDelegate {
     
     func bottomSheet(_ container: UIView?, didPresent state: SheetTranslationState) {}
     func bottomSheet(_ container: UIView?, didChange state: SheetTranslationState) {}
