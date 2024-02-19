@@ -638,5 +638,10 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
                 })
                 self.container!.frame = frame
                 self.parent.view.layoutIfNeeded()
+                
+            }, completion: { finished in
+                if self.lastAnimatedValue != position {
+                    return
+                }
             }
 }
