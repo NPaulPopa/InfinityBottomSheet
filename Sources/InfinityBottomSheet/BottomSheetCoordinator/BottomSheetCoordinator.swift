@@ -646,5 +646,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
                 
                 self.delegate?.bottomSheet(self.container,
                                            didChange: .finished(position, self.calculatePercent(at: position)))
+                
+                guard self.parent != nil else { return }
+                if position >= self.availableHeight {
+                    self.removeBottomSheet()
+                }
             }
-
