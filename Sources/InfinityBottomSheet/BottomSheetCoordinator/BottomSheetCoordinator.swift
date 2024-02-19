@@ -628,4 +628,13 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         
         self.delegate?.bottomSheet(self.container,
                                    didChange: .willFinish(position, self.calculatePercent(at: position)))
+        
+        if animated {
+            self.lastAnimatedValue = position
+            dataSource.animator?.animate(animations: {
+                self.delegate?.bottomSheet(self.container, finishTranslationWith: { (anim) in
+                    anim(self.calculatePercent(at: position))
+                }
+        }
     }
+                                           
