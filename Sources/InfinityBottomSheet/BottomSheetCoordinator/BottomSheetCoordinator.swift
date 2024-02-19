@@ -634,7 +634,9 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
             dataSource.animator?.animate(animations: {
                 self.delegate?.bottomSheet(self.container, finishTranslationWith: { (anim) in
                     anim(self.calculatePercent(at: position))
-                }
-        }
-    }
-                                           
+                    
+                })
+                self.container!.frame = frame
+                self.parent.view.layoutIfNeeded()
+            }
+}
