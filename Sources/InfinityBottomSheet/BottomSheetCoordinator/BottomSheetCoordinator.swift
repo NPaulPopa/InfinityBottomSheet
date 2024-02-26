@@ -659,4 +659,17 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
                                        didChange: .finished(position, self.calculatePercent(at: position)))
         
     }
-  
+}
+    //MARK: Utility methods
+    
+    /**
+     Sheet translation in precent.
+     
+     Lowest top sheet y position is 100. Highest bottom sheet y position is 0 percent.
+     
+     - parameter pos: current top constraint value
+     */
+    private func calculatePercent(at pos: CGFloat) -> CGFloat {
+        return (availableHeight - pos) / (availableHeight - minSheetPosition!) * 100
+    }
+   
