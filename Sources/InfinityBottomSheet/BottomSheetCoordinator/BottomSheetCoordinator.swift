@@ -690,4 +690,8 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
      - parameter limit: max sheet y position
      */
     private func hasExceededBottomLimit(_ constant: CGFloat, _ limit: CGFloat) -> Bool {
+        return (constant - limit) > tolerance
     }
+    
+}
+
