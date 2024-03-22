@@ -695,3 +695,20 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     
 }
 
+
+// MARK: UIGestureRecognizerDelegate
+extension InfinityBottomSheetCoordinator: UIGestureRecognizerDelegate{
+    
+    /// Ignore back view pan gesture recognizers if there is a scrollview and alwaysBounceVertical is set to true.
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if let scrollView = otherGestureRecognizer.view as? UIScrollView{
+            return scrollView.alwaysBounceVertical
+        }else{
+            return true
+        }
+    }
+}
+
+
+
+
