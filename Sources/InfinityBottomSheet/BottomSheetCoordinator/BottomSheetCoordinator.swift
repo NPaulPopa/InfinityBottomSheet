@@ -672,4 +672,15 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
     private func calculatePercent(at pos: CGFloat) -> CGFloat {
         return (availableHeight - pos) / (availableHeight - minSheetPosition!) * 100
     }
-   
+    
+    /**
+     Top sheet position limit has exceeded while dragging
+     
+     - parameter constant: current top constraint value
+     - parameter limit: min sheet y position
+     */
+    private func hasExceededTopLimit(_ constant: CGFloat, _ limit: CGFloat) -> Bool {
+        return (constant - limit) < tolerance
+    }
+    
+    
