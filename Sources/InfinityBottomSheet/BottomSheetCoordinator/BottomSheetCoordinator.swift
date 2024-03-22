@@ -683,4 +683,11 @@ public class InfinityBottomSheetCoordinator: NSObject, BottomSheetProtocol {
         return (constant - limit) < tolerance
     }
     
-    
+    /**
+     Bottom sheet position limit has exceeded while dragging
+     
+     - parameter constant: current top constraint value
+     - parameter limit: max sheet y position
+     */
+    private func hasExceededBottomLimit(_ constant: CGFloat, _ limit: CGFloat) -> Bool {
+    }
