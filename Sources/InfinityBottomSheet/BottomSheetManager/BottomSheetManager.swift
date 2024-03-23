@@ -142,7 +142,27 @@ public class BottomSheetManager: BottomSheetManagerProtocol {
     }
 }
 
+//MARK: BottomSheet BackgroundView
 
+extension BottomSheetManager {
+    
+    private func addBackgroundDimmingView(under container: UIView) {
+        
+        guard bgView == nil else { return }
+        
+        bgView = UIView()
+        
+        guard let bgView = bgView else { return }
+        
+        bgView.backgroundColor = .label.withAlphaComponent(0.3)
+        parentViewController.view.insertSubview(bgView, belowSubview: container)
+
+        bgView.translatesAutoresizingMaskIntoConstraints = false
+        
+        pin(subview: bgView, toParent: parentViewController.view)
+        
+    }
+}
 
 
 //MARK: BottomSheet DataSource
