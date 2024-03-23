@@ -161,6 +161,11 @@ extension BottomSheetManager {
         
         pin(subview: bgView, toParent: parentViewController.view)
         
+        let propertyAnimator = UIViewPropertyAnimator(duration: 0.2, curve: .easeOut) {
+            
+            self.tabBarIsHidden(true)
+        }
+        propertyAnimator.startAnimation()
     }
 }
 
