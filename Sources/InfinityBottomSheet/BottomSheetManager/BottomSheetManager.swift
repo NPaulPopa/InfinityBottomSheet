@@ -195,6 +195,14 @@ extension BottomSheetManager {
             subview.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
         ])
     }
+ 
+    
+    private func tabBarIsHidden(_ isHidden: Bool) {
+        
+        self.parentViewController.tabBarController?.tabBar.isHidden = isHidden
+    }
+    
+ 
 }
 
 
